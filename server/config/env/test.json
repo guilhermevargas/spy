@@ -1,0 +1,30 @@
+{
+  "mongo" : {
+    "host"      : "127.0.0.1",
+    "port"      : "27017",
+    "database " : "audister-test"
+  },
+  "auth" : {
+    "jwt" : {
+      "secret" : "secretqa"
+    },  
+    "facebook" : {
+      "client_id"     : "522134911492080",
+      "client_secret" : "763a003ab6a2c3bb34254e285d98e8ad"
+    },
+    "patreon" : {
+      "client_id"     : "14cf984a577d43c2809f7bb6500855d9172f9733844e5b20eaf7dc906d8177a6",
+      "client_secret" : "31b7d9f60642f3fa5c3d5a119ba9999589b0f1cc44166a23990c43d62fadc4c4"
+    }
+  },
+  "feed" : {
+    "title"           : "Audister",
+    "description"     : "Best content at your headphones",
+    "generator"       : "audister",
+    "site_url"        : "https://audister.com",
+    "managingEditor"  : "Audister Studios",
+    "webMaster"       : "Audister Tech",
+    "copyright"       : "Audister Studios",
+    "language"        : "pt-br"
+  }
+}
