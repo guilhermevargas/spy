@@ -20,10 +20,36 @@ const server = Hapi.server({
 });
 
 const init = async () => {
-  await server.start();
+  await loadRouters(server);
+	await loadLog(server);
+	
+	await server.start();
 	
 	console.log(`Server running at: ${server.info.uri}`);
 };
+
+const loadRouters = (server) => {
+  server.register({
+    plugin : router, 
+    options  : {
+      routes : '**/api/*.js'
+    } 
+  })
+
+  return Promise.resolve();
+}
+
+const loadLog = (server) => {
+  server.register({
+    plugin: require('hapi-pino'),
+    options: {
+      prettyPrint: true,
+      logEvents: ['response']
+    }
+  });
+
+  return Promise.resolve();
+}
 
 process.on('unhandledRejection', (err) => {
   console.log(err);

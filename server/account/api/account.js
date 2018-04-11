@@ -1,10 +1,10 @@
 'use strict'
 
 const create = {
-	method: 'POST',
+	method: 'GET',
 	path: '/account',
 	handler: async (request, reply) => {
-		console.log('my account was create!');
+		return 'my account was create!';
 	}
 }
 
