@@ -11,8 +11,7 @@ nconf
 	.env({separator: '__'})
 	.file(properties);
 
-require('./config/mongo');
-const auth = require('./config/auth');
+const mongo = require('./config/mongo');
 
 const server = Hapi.server({
   port: 3000,
@@ -22,7 +21,7 @@ const server = Hapi.server({
 const init = async () => {
   await loadRouters(server);
 	await loadLog(server);
-	
+
 	await server.start();
 	
 	console.log(`Server running at: ${server.info.uri}`);

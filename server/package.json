@@ -13,6 +13,7 @@
     "hapi-pino": "^4.0.4",
     "hapi-router": "^4.0.0",
     "mongoose": "^5.0.14",
+    "mongoose-auto-increment": "^5.0.1",
     "nconf": "^0.10.0"
   }
 }
