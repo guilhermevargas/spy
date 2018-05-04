@@ -12,6 +12,7 @@ nconf
 	.file(properties);
 
 const mongo = require('./config/mongo');
+const auth = require('./config/auth');
 
 const server = Hapi.server({
   port: 3000,
@@ -19,6 +20,7 @@ const server = Hapi.server({
 });
 
 const init = async () => {
+	await loadAuth(server);
   await loadRouters(server);
 	await loadLog(server);
 
@@ -48,6 +50,10 @@ const loadLog = (server) => {
   });
 
   return Promise.resolve();
+}
+
+const loadAuth = (server) => {
+	return auth.config(server);
 }
 
 process.on('unhandledRejection', (err) => {
